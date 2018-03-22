@@ -121,7 +121,9 @@ export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$ANDROIDSDK/tools:$ANDROIDSDK/platform-
 ### 0x07 测试打包
 2017.5.31更新
 启动Vbox突然出现
+
 ![](https://i.imgur.com/DtiJGRx.png)
+
 这个问题普遍存在于各种情形下，我这里虚拟机之前是正常的，自从电脑打了补丁后就出现这个错误，经查，有效的解决方法是重新注册VboxC.dll：
 切换到Vbox的安装目录下，运行cmd命令
 ```
@@ -137,6 +139,7 @@ su -
 p4a apk --requirements=kivy --private /home/kivydev/kivy/pfatest/ --package=com.pfaapp.test --name="test" --version=1.0 --bootstrap=sdl2
 ```
 编译成功，经过与之前的编译方式对比应该是pfa安装在root下才能正常编译，否则会出现各种问题。
+
 <del>打包出来的apk有9m大小，运行时启动loading图像会卡屏，原因不明。<del>
 
 p4a使用sdl2打包的参数说明
@@ -173,14 +176,13 @@ p4a会自动查找当前目录下.p4a文件作为配置文件，该文件里面�
 
 
 ## 使用buildozer打包
-所有包的安装都在root下进行，因为在Ubuntu下，普通用户pip（即使是sudo pip）会把包安装到当前用户目录下，不在系统目录下，造成无法在系统环境变量path下找到包。
-先安装buildozer，`pip install buildozer`
-需要安装的依赖库：zlib1g-dev、git、cython（注意必须安装与kivy对应的版本，我这里kivy是1.9.0，cython应当是0.21.2）、openjdk-8-jdk
- 
-然后切换回普通用户权限
-在项目目录下运行 `buildozer init`
-打开spec文件，把log_level=1改成2
-`buildozer android_new debug`
+- 所有包的安装都在root下进行，因为在Ubuntu下，普通用户pip（即使是sudo pip）会把包安装到当前用户目录下，不在系统目录下，造成无法在系统环境变量path下找到包。
+- 先安装buildozer，`pip install buildozer`
+- 需要安装的依赖库：zlib1g-dev、git、cython（注意必须安装与kivy对应的版本，我这里kivy是1.9.0，cython应当是0.21.2）、openjdk-8-jdk
+- 然后切换回普通用户权限  
+- 在项目目录下运行 `buildozer init`  
+- 打开spec文件，把log_level=1改成2  
+- 运行 `buildozer android_new debug`  
 它会根据recipe下载相应的包，通常一个kivy包括Recipe build order is ['python2', 'sdl2_image', 'sdl2_mixer', 'sdl2_ttf', 'sdl2', 'six', 'pyjnius', u'kivy']
 
 
