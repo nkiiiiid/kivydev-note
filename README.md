@@ -39,15 +39,17 @@ apt-get install synaptic   #这里可能会出错，需要运行下apt-get –f 
     libavcodec-dev \
     zlib1g-dev
 
-现在试运行一个程序
-`python /usr/share/kivi-examples/guide/firstwidget/1_skeleton.py`
-这里我们对kivy-examples修改下权限，因为默认当前用户对kivy-examples没有写的权限。
+现在试运行一个程序  
+`python /usr/share/kivi-examples/guide/firstwidget/1_skeleton.py`  
+
+这里我们对kivy-examples修改下权限，因为默认当前用户对kivy-examples没有写的权限。  
 `sudo chmod -R 775  /usr/share/kivy-examples`
 
 
 ### 0x03 安装打包apk需要的一些库
 参考http://python-for-android.readthedocs.org/en/latest/prerequisites/
-使用新立得安装**build-essential** ccache git zlib1g-dev **libncurses5 libstdc++6 zlib1g:i386 **openjdk-8-jdk **unzip** ant    （标记粗体的是本来就存在的）、patch libsdl1.2-dev、libsdl2-dev、autoconf、libtool
+使用新立得安装**build-essential** ccache git zlib1g-dev **libncurses5 ** 
+**libstdc++6** **zlib1g:i386** openjdk-8-jdk **unzip** ant    （标记粗体的是本来就存在的）、patch libsdl1.2-dev、libsdl2-dev、autoconf、libtool
 
 
 ### 0x04 配置环境变量
