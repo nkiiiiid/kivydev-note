@@ -47,7 +47,7 @@ apt-get install synaptic   #这里可能会出错，需要运行下apt-get –f 
 
 
 ### 0x03 安装打包apk需要的一些库
-参考http://python-for-android.readthedocs.org/en/latest/prerequisites/
+参考http://python-for-android.readthedocs.io/en/latest/quickstart/#installation  
 使用新立得安装**build-essential** ccache git zlib1g-dev **libncurses5** 
 **libstdc++6** **zlib1g:i386** openjdk-8-jdk **unzip** ant    （标记粗体的是本来就存在的）、patch libsdl1.2-dev、libsdl2-dev、autoconf、libtool
 
